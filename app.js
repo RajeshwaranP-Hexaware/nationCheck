@@ -10,6 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 app.post('/', (req, res) => {
     console.log('REQUSST', JSON.stringify(req.body));
     if(req.body.result.metadata.intentName == "addNationalId"){
+        console.log('I am in');
         let leave_details= [];
         leave_details.push({
             "optionInfo": {
@@ -33,7 +34,7 @@ app.post('/', (req, res) => {
             "itemValues": leave_details
         };
 
-        return {
+        return res.json({
           "messages": [
               {
                   "displayText": data.speechMsg,
@@ -47,7 +48,7 @@ app.post('/', (req, res) => {
                   "type": "list_card"
               }
           ]
-      };
+      });
     } else if(req.body.result.metadata.intentName == "addNationalId-type"){
       console.log('FULL REQ IN addNationalId', JSON.stringify(req.body));
       var country, nationalIdType="", nationalId ="", comment=""
@@ -86,7 +87,7 @@ app.post('/', (req, res) => {
           "itemValues": leave_details
       };
 
-      return {
+      return res.json({
           "contextOut": [
               {
                   "name": "actions_intent_option",
@@ -116,7 +117,7 @@ app.post('/', (req, res) => {
                 "type": "list_card"
             }
         ]
-    };
+    });
   }
   } else{
     console.log('JEJJEJE', req.body);
