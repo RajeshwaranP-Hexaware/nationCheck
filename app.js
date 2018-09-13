@@ -89,20 +89,20 @@ app.post('/', (req, res) => {
       };
 
       var resp = {
-          "outputContexts": [
+          "contextOut": [
               {
                   "name": "actions_intent_option",
                   "parameters": {
                     "country": country,
-                    "country.original": country,
-                    "nationalIdType": nationalIdType,
-                    "nationalIdType.original": nationalIdType,
                     "nationalId": nationalId,
+                    "comment.original": comment,
                     "nationalId.original": nationalId,
+                    "country.original": country,
+                    "nationalIdType.original": nationalIdType,
                     "comment": comment,
-                    "comment.original": comment
+                    "nationalIdType": nationalIdType
                   },
-                  "lifespanCount": 5
+                  "lifespan": 5
                 }
           ],
         "messages": [
