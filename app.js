@@ -14,7 +14,7 @@ app.post('/', (req, res) => {
         let leave_details= [];
         leave_details.push({
             "optionInfo": {
-                "key": `ind`,
+                "key": `IND`,
                 "synonyms": `India`
             },
             "title": `India`,
@@ -22,7 +22,7 @@ app.post('/', (req, res) => {
         });
         leave_details.push({
             "optionInfo": {
-                "key": `eng`,
+                "key": `ENG`,
                 "synonyms": `england`
             },
             "title": `England`,
@@ -61,14 +61,14 @@ app.post('/', (req, res) => {
             nationalId = contexts[i].parameters.nationalId;
             comment = contexts[i].parameters.comment;
         }
-     }
-
+      }
+      console.log('yAAR ',country, nationalIdType,nationalId,comment);
      if(nationalIdType == ""){
 
       let leave_details= [];
       leave_details.push({
           "optionInfo": {
-              "key": `pan`,
+              "key": `PAN`,
               "synonyms": `Pan`
           },
           "title": `Pan`,
@@ -76,7 +76,7 @@ app.post('/', (req, res) => {
       });
       leave_details.push({
           "optionInfo": {
-              "key": `aadhar`,
+              "key": `AADHAR`,
               "synonyms": `Aadhar`
           },
           "title": `Aadhar`,
