@@ -119,6 +119,7 @@ app.post('/', (req, res) => {
             }
         ]
     };
+    console.log('pol', JSON.stringify(resp));
     return res.json(resp);
   }
   } else{
