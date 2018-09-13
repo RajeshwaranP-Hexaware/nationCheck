@@ -124,8 +124,8 @@ app.post('/', (req, res) => {
     console.log('pol', JSON.stringify(resp));
     return res.json(resp);
   }
-  } else{
-    console.log('JEJJEJE', req.body);
+  } else if(req.body.result.metadata.intentName == "addNationalId-type - custom"){
+    console.log('JEJJEJE', JSON.stringify(req.body));
   }
 
 });
