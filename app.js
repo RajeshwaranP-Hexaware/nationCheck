@@ -89,7 +89,7 @@ app.post('/', (req, res) => {
       };
 
       var resp = {
-          "contextOut": [
+          "outputContexts": [
               {
                   "name": "actions_intent_option",
                   "parameters": {
@@ -102,7 +102,7 @@ app.post('/', (req, res) => {
                     "comment": comment,
                     "comment.original": comment
                   },
-                  "lifespan": 5
+                  "lifespanCount": 5
                 }
           ],
         "messages": [
