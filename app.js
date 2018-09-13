@@ -88,7 +88,7 @@ app.post('/', (req, res) => {
           "itemValues": leave_details
       };
 
-      return res.json({
+      var resp = {
           "contextOut": [
               {
                   "name": "actions_intent_option",
@@ -118,7 +118,8 @@ app.post('/', (req, res) => {
                 "type": "list_card"
             }
         ]
-    });
+    };
+    return res.json(resp);
   }
   } else{
     console.log('JEJJEJE', req.body);
