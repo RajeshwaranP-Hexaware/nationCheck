@@ -105,19 +105,21 @@ app.post('/', (req, res) => {
                   "lifespan": 5
                 }
           ],
-        "messages": [
-            {
-                "displayText": data.speechMsg,
-                "platform": "google",
-                "textToSpeech": data.speechMsg,
-                "type": "simple_response"
-            },  {
-                "items": data.itemValues,
-                "platform": "google",
-                "title": data.title,
-                "type": "list_card"
+          "data": {
+            "google": {
+              "expectUserResponse": true,
+              "richResponse": {
+                "items": [
+                  {
+                    "simpleResponse": {
+                      "textToSpeech": "Check Test",
+                      "displayText": "Check test"
+                    }
+                  }
+                ]
+              }
             }
-        ]
+        }
     };
     console.log('pol', JSON.stringify(resp));
     return res.json(resp);
