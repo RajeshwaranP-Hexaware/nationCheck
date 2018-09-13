@@ -52,6 +52,7 @@ app.post('/', (req, res) => {
     } else if(req.body.result.metadata.intentName == "addNationalId-type"){
       console.log('FULL REQ IN addNationalId', JSON.stringify(req.body));
       var country, nationalIdType="", nationalId ="", comment=""
+      var contexts = req.body.result.contexts;
       for(var i=0;i<contexts.length;i++){
         if(contexts[i].name === "actions_intent_option"){
             console.log("HEY RAJESH", JSON.stringify(contexts[i]));
