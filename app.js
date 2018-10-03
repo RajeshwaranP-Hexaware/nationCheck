@@ -126,7 +126,80 @@ app.post('/', (req, res) => {
   }
   } else if(req.body.result.metadata.intentName == "addNationalId-type - custom"){
     console.log('JEJJEJE', JSON.stringify(req.body));
-  }
+  } else if(req.body.result.metadata.intentName == "getCompetition"){
+    console.log("GET COMP ",req.body.parameters);
+    if(req.body.fulfillment.speech == "competition_name"){
+        
+        return res.json({
+            "messages": [
+                {
+                    "displayText": "Enter Competiton Name",
+                    "platform": "google",
+                    "textToSpeech": "Enter Competiton Name",
+                    "type": "simple_response"
+                }
+            ]
+        });
+    } else if(req.body.fulfillment.speech == "comment"){
+        let resp = {"contextOut": [
+            {
+                "name": "94e17669-bbd5-4a0c-9c97-a0a734c6d566_id_dialog_context",
+                "parameters": {
+                    "comment.original": "",
+          "competitionName": "",
+          "comment": "",
+          "competitionName.original": ""
+                },
+                "lifespan": 2
+              }
+        ],
+        "data": {
+          "google": {
+            "expectUserResponse": true,
+            "richResponse": {
+              "items": [
+                {
+                  "simpleResponse": {
+                    "textToSpeech": "Enter Comment",
+                    "displayText": "Enter Comment"
+                  }
+                }
+              ]
+            }
+          }
+      }};
+        return res.json(resp);
+    } else{
+        let resp = {"contextOut": [
+            {
+                "name": "94e17669-bbd5-4a0c-9c97-a0a734c6d566_id_dialog_context",
+                "parameters": {
+                    "comment.original": "",
+          "competitionName": "",
+          "comment": "",
+          "competitionName.original": ""
+                },
+                "lifespan": 2
+              }
+        ],
+        "data": {
+          "google": {
+            "expectUserResponse": true,
+            "richResponse": {
+              "items": [
+                {
+                  "simpleResponse": {
+                    "textToSpeech": "I am done",
+                    "displayText": "I am done"
+                  }
+                }
+              ]
+            }
+          }
+      }};
+        return res.json(resp);
+    }
+}
 
 });
 
