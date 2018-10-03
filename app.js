@@ -142,16 +142,16 @@ app.post('/', (req, res) => {
         });
     } else if(req.body.result.fulfillment.speech == "comment"){
         let resp = {"contextOut": [
-            {
-                "name": "94e17669-bbd5-4a0c-9c97-a0a734c6d566_id_dialog_context",
-                "parameters": {
-                    "comment.original": "",
-          "competitionName": "",
-          "comment": "",
-          "competitionName.original": ""
-                },
-                "lifespan": 1
-              }
+        //     {
+        //         "name": "94e17669-bbd5-4a0c-9c97-a0a734c6d566_id_dialog_context",
+        //         "parameters": {
+        //             "comment.original": "",
+        //   "competitionName": "",
+        //   "comment": "",
+        //   "competitionName.original": ""
+        //         },
+        //         "lifespan": 1
+        //       }
         ],
         "data": {
           "google": {
@@ -171,16 +171,16 @@ app.post('/', (req, res) => {
         return res.json(resp);
     } else{
         let resp = {"contextOut": [
-            {
-                "name": "94e17669-bbd5-4a0c-9c97-a0a734c6d566_id_dialog_context",
-                "parameters": {
-                    "comment.original": "",
-          "competitionName": "",
-          "comment": "",
-          "competitionName.original": ""
-                },
-                "lifespan": 1
-              }
+        //     {
+        //         "name": "94e17669-bbd5-4a0c-9c97-a0a734c6d566_id_dialog_context",
+        //         "parameters": {
+        //             "comment.original": "",
+        //   "competitionName": "",
+        //   "comment": "",
+        //   "competitionName.original": ""
+        //         },
+        //         "lifespan": 1
+        //       }
         ],
         "data": {
           "google": {
