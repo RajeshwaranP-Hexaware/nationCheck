@@ -150,7 +150,7 @@ app.post('/', (req, res) => {
           "comment": "",
           "competitionName.original": ""
                 },
-                "lifespan": 2
+                "lifespan": 0
               }
         ],
         "data": {
@@ -179,7 +179,7 @@ app.post('/', (req, res) => {
           "comment": "",
           "competitionName.original": ""
                 },
-                "lifespan": 2
+                "lifespan": 0
               }
         ],
         "data": {
