@@ -127,8 +127,8 @@ app.post('/', (req, res) => {
   } else if(req.body.result.metadata.intentName == "addNationalId-type - custom"){
     console.log('JEJJEJE', JSON.stringify(req.body));
   } else if(req.body.result.metadata.intentName == "getCompetition"){
-    console.log("GET COMP ",req.body.parameters);
-    if(req.body.fulfillment.speech == "competition_name"){
+    console.log("GET COMP ",req.body.result.parameters);
+    if(req.body.result.fulfillment.speech == "competition_name"){
         
         return res.json({
             "messages": [
@@ -140,7 +140,7 @@ app.post('/', (req, res) => {
                 }
             ]
         });
-    } else if(req.body.fulfillment.speech == "comment"){
+    } else if(req.body.result.fulfillment.speech == "comment"){
         let resp = {"contextOut": [
             {
                 "name": "94e17669-bbd5-4a0c-9c97-a0a734c6d566_id_dialog_context",
