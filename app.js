@@ -144,12 +144,11 @@ app.post('/', (req, res) => {
         if(req.body.result.parameters.competitionName !== "PL"){
             let eventResp = {
                 "followupEvent": {
-                    "name": "event-name",
+                    "name": "competition_event",
                     "data": {
                         "competitionName": "",
                         "comment": ""
-                    },
-                    "languageCode": "en-US"
+                    }
                 }
             };
             return res.json(eventResp);
