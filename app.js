@@ -143,15 +143,13 @@ app.post('/', (req, res) => {
     } else if(req.body.result.fulfillment.speech == "comment"){
         if(req.body.result.parameters.competitionName !== "PL"){
             let eventResp = {
-                "followupEventInput": {
+                "followupEvent": {
                     "name": "event-name",
-                    "parameters": {
-                        "comment.original": "",
+                    "data": {
                         "competitionName": "",
-                        "comment": "",
-                        "competitionName.original": ""
+                        "comment": ""
                     },
-                "languageCode": "en-US"
+                    "languageCode": "en-US"
                 }
             };
             return res.json(eventResp);
