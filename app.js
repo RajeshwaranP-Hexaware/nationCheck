@@ -149,7 +149,15 @@ app.post('/', (req, res) => {
                         "competitionName": "",
                         "comment": ""
                     }
-                }
+                },
+                "messages": [
+                    {
+                        "displayText": "Need Comment",
+                        "platform": "google",
+                        "textToSpeech": "Need Comment",
+                        "type": "simple_response"
+                    }
+                ]
             };
             return res.json(eventResp);
         } else {
