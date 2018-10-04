@@ -142,7 +142,7 @@ app.post('/', (req, res) => {
         });
     } else if(req.body.result.fulfillment.speech == "comment"){
         if(req.body.result.parameters.competitionName !== "PL"){
-            let res = {
+            let eventResp = {
                 "followupEventInput": {
                     "name": "event-name",
                     "parameters": {
@@ -154,7 +154,7 @@ app.post('/', (req, res) => {
                 "languageCode": "en-US"
                 }
             };
-            return res.json(res);
+            return res.json(eventResp);
         } else {
             let resp = {
                 "data": {
