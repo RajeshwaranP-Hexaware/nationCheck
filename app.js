@@ -141,34 +141,39 @@ app.post('/', (req, res) => {
             ]
         });
     } else if(req.body.result.fulfillment.speech == "comment"){
-        let resp = {"contextOut": [
-        //     {
-        //         "name": "94e17669-bbd5-4a0c-9c97-a0a734c6d566_id_dialog_context",
-        //         "parameters": {
-        //             "comment.original": "",
-        //   "competitionName": "",
-        //   "comment": "",
-        //   "competitionName.original": ""
-        //         },
-        //         "lifespan": 1
-        //       }
-        ],
-        "data": {
-          "google": {
-            "expectUserResponse": true,
-            "richResponse": {
-              "items": [
-                {
-                  "simpleResponse": {
-                    "textToSpeech": "Enter Comment",
-                    "displayText": "Enter Comment"
-                  }
+        if(req.body.result.parameters.competitionName !== "PL"){
+            let res = {
+                "followupEventInput": {
+                    "name": "event-name",
+                    "parameters": {
+                        "comment.original": "",
+                        "competitionName": "",
+                        "comment": "",
+                        "competitionName.original": ""
+                    },
+                "languageCode": "en-US"
                 }
-              ]
-            }
-          }
-      }};
-        return res.json(resp);
+            };
+            return res.json(res);
+        } else {
+            let resp = {
+                "data": {
+                  "google": {
+                    "expectUserResponse": true,
+                    "richResponse": {
+                      "items": [
+                        {
+                          "simpleResponse": {
+                            "textToSpeech": "Enter Comment",
+                            "displayText": "Enter Comment"
+                          }
+                        }
+                      ]
+                    }
+                  }
+              }};
+                return res.json(resp);
+        }
     } else{
         let resp = {"contextOut": [
         //     {
